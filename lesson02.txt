@@ -8,6 +8,7 @@ git restore --staged
 
 3.Как отменить ошибочный commit ?
 git reset
+git revert
 
 4.Как создать новую ветку и переключится в нее?
 git branch <ветка> + git checkout <ветка> ИЛИ git checkout -b <ветка>
