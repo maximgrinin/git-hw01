@@ -1,0 +1,14 @@
+
+
+
+===
+===
+===
+
+git push --set-upstream origin GH-1-Test - пуш с новой веткой
+git pull синхронизировать с гитхабом
+git clone git@github.com:maximgrinin/181022-e-be181022-e-fe.git - клонировать репо с гитлаба
+
+git add/rm - добавить в индекс удаленные файлы
+git restore - восстановить удаленные файлы
+git reset HEAD~количество коммитов - откатиться на количество коммитов назад. дальше checkout/git restore
