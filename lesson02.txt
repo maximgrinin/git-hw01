@@ -1,0 +1,95 @@
+Описание занятия:
+
+1.Как отказаться от изменений в файле (файлах) находящийся в рабочем каталоге (work directory)?
+git checkout
+
+2.Как вернуть файл из индекса в рабочий каталог?
+git restore --staged
+
+3.Как отменить ошибочный commit ?
+git reset
+
+4.Как создать новую ветку и переключится в нее?
+git branch <ветка> + git checkout <ветка> ИЛИ git checkout -b <ветка>
+
+5.В чем отличение между fast-forward merge  and non fast-forfard merge?
+fast-forward merge - если основная ветка не меняется, при мердже просто переносится указатель ветки в которую вливается изменение
+non fast-forfard merge - две ветки развивались параллельно и перенести указатель без потерь мы не можем. создается новый коммит, в который включается последний коммит из обеих веток, объединил и переместил указатель мейна на новый коммит
+
+6.Когда может возникнуть конфликт слияния веток, как  его разрешить?
+Когда в разных ветках менялись одни и те же файлы и гит не может автоматически объединить эти изменения.
+Можно откзаться от мерджинга git merge --abort
+Можно разрешить конфликт вручную и закончить мердж git commit -a
+
+7.Можно ли удалить ветку? Как? 
+git branch -d <ветка>
+
+
+В ответах на вопросы 1-4, 7 необходимо указать конкретные команда git. 
+На 5 и 6 вопросы дать объяснение своими словами.
+
+===
+===
+===
+
+github
+
+…or create a new repository on the command line
+echo "# test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:maximgrinin/test.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin git@github.com:maximgrinin/test.git
+git branch -M main
+git push -u origin main
+
+
+===
+
+git init
+git add <файл или .>
+git commit -m <комментарий>
+git push 
+
+modified - изменен, но не зафиксирован
+staged - проиндексированы и добавлены в коммит
+committed - сохранен в локальной базе
+
+git log - лог коммитов
+git log --oneline --decorate --graph --all
+
+git status - статус локального репозитория
+
+git checkout . - Отменит изменения во всех файлах которые были сделаны но не добавлен (до add) (бесследно)
+git restore --staged . - отменяет изменения которые уже были проиндексированы (после add, но до commit), отменит добавление в индекс, а дальше checkout
+
+git clean -xdn (-xdf) - очистка от ненужных файлов
+
+git commit --amend -m - поправить последний коммит (заменить) (только комментарий? добавляет новые файлы?) невсегда :)
+
+git reset HEAD~количество коммитов - откатиться на количество коммитов назад. дальше checkout/git restore
+
+git pull - синхронизировать локальный репозиторий с гитхабом - по факту получить все с гитхаба
+
+git revert HEAD - реверсирует последний коммит - что удалено - вернется, что добавлено - будет удалено
+
+git branch <ветка> - создать ветку
+
+git branch -v - посмотреть ветки
+
+git checkout -b <ветка> - альтернативный способо создать ветку и сразу на нее переключиться
+
+git checkout <ветка> - переключиться на ветку
+
+git branch -d <ветка> - удалить ветку
+
+git checkout main + git merge test - ветку тест влить в ветку мейн
+
+git merge --abort - отказаться от мерджинга при конфликте
+git add <file> - добавить файл
+git commit -a - завершить мерджинг
