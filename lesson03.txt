@@ -12,3 +12,4 @@ git clone git@github.com:maximgrinin/181022-e-be181022-e-fe.git - клониро
 git add/rm - добавить в индекс удаленные файлы
 git restore - восстановить удаленные файлы
 git reset HEAD~количество коммитов - откатиться на количество коммитов назад. дальше checkout/git restore
+git rm - удалить файл из репо
